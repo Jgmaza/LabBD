@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "pruebassql";
 $db = "prueba";
 $conection = mysqli_connect($host,$user,$pass,$db);
-mysqli_set_charset($connection,"utf8");
+mysqli_set_charset($conection,"utf8");
 ?>
