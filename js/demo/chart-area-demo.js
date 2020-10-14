@@ -124,6 +124,13 @@ function main(datos) {
 
 }
 
+function importarScript(nombre) {
+  var s = document.createElement("script");
+  s.src = nombre;
+  document.querySelector("head").appendChild(s);
+}
+
 $.post("php/consultor-graph1.php", {}, function (response) {
   main(response);
+  importarScript("js/demo/chart-pie-demo.js");
 });
