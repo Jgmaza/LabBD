@@ -3,7 +3,6 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 // Pie Chart Example
-var ctx = document.getElementById("myPieChart");
 
 function calculator(info){
   for (let index = 0; index < info.length; index++) {
@@ -15,16 +14,17 @@ function calculator(info){
 function main(info) {
   info=info.substring(0,info.length-1);
   var d = info.split("-");
-  
+  var ctx = document.getElementById("myPieChart");
   var myPieChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: d,
+      labels: ["Recuperados", "Fallecidos", "N/A", "Hospital UCI", "Hospital", "En Casa"],
       datasets: [{
-        data: [55, 30, 15],
-        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-        hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+        //Verde, Rojo, Gris, Naranja, Amarillo, Azul 
+        backgroundColor: ['#1cc88a', '#d34240', '#cdcdcd', '#ff9800', '#fbdb48', '#4e73df'],
+        hoverBackgroundColor: ['#17a673', '#c63637', '#9c9c9c', '#f57c00', '#faca0f', '#2e59d9'],
         hoverBorderColor: "rgba(234, 236, 244, 1)",
+        data: d,
       }],
     },
     options: {

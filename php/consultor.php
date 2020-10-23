@@ -2,13 +2,11 @@
 
 $message = "";
 require("Connection.php");
-
-$sql = mysqli_query($conection, "SELECT id_caso,fecha_diagnostico FROM ayuda");
+$sql = mysqli_query($conection, "SELECT Id_caso,Fecha_diagnostico FROM Casos Where Id_caso < 11");
 
 while($result = mysqli_fetch_array($sql)) { 
-    $id = $result['id_caso'];
-    $fecha = $result['fecha_diagnostico'];
-
+    $id = $result['Id_caso'];
+    $fecha = $result['Fecha_diagnostico'];
     $message .='
     <tr>
     <td>'. $id .'</td>
