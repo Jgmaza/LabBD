@@ -55,5 +55,5 @@ function importarScript(nombre) {
 
 $.post("php/consultor-graph2.php", {}, function (response) {
   main(response);
-
+  importarScript("js/demo/chart-area2-demo.js");
 });

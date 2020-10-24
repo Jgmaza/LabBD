@@ -33,7 +33,7 @@ function main(datos) {
   // Area Chart Example
   datos = datos.substring(0, datos.length - 1);
   var d = datos.split("-");
-  var ctx = document.getElementById("myAreaChart");
+  var ctx = document.getElementById("myRecuperadosChart");
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -41,14 +41,14 @@ function main(datos) {
       datasets: [{
         label: "Casos activos",
         lineTension: 0.3,
-        backgroundColor: "rgba(78, 115, 223, 0.05)",
-        borderColor: "rgba(78, 115, 223, 1)",
+        backgroundColor: "rgba(28, 200, 138, 0.05)",
+        borderColor: "rgba(28, 200, 138, 1)",
         pointRadius: 3,
-        pointBackgroundColor: "rgba(78, 115, 223, 1)",
-        pointBorderColor: "rgba(78, 115, 223, 1)",
+        pointBackgroundColor: "rgba(28, 200, 138, 1)",
+        pointBorderColor: "rgba(28, 200, 138, 1)",
         pointHoverRadius: 3,
-        pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-        pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+        pointHoverBackgroundColor: "rgba(28, 200, 138, 1)",
+        pointHoverBorderColor: "rgba(28, 200, 138, 1)",
         pointHitRadius: 10,
         pointBorderWidth: 2,
         data: d,
@@ -81,7 +81,7 @@ function main(datos) {
           ticks: {
             maxTicksLimit: 5,
             padding: 10,
-            // Include a dollar sign in the ticks
+            // Include a dollar sign in the ticks '#1cc88a'
             callback: function (value, index, values) {
               return number_format(value);
             }
@@ -130,8 +130,7 @@ function importarScript(nombre) {
   document.querySelector("head").appendChild(s);
 }
 
-$.post("php/consultor-graph1.php", {}, function (response) {
+$.post("php/consultor-area2.php", {}, function (response) {
   main(response);
-  importarScript("js/demo/chart-pie-demo.js");
   
 });
